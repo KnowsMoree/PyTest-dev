@@ -47,3 +47,5 @@ class TestWebsite:
                 return self.driver.find_element(By.XPATH, "//input[@type='file']")
             case "doc_submit":
                 return self.driver.find_element(By.XPATH, "//button[@type='submit']")
+            case "saldo_sign":
+                return self.driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[11]/div[3]/div/div/div")
