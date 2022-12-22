@@ -14,24 +14,20 @@ def delay(sec):
 
 
 class TestWebsite:
-    # 1. Check browser configuration in browser_setup_and_teardown
-    # 2. Run 'Selenium Tests' configuration
-    # 3. Test report will be created in reports/ directory
     driver = webdriver.Chrome(ChromeDriverManager().install())
 
     @pytest.fixture(autouse=True)
     def browser_setup_and_teardown(self):
-        self.browser = self.driver
         self.keys = Keys
 
-        self.browser.maximize_window()
-        self.browser.implicitly_wait(10)
-        self.browser.get("https://app.tandatanganku.com/")
+        self.driver.maximize_window()
+        self.driver.implicitly_wait(15)
+        self.driver.get("https://app.tandatanganku.com/")
 
         yield
 
-        self.browser.close()
-        self.browser.quit()
+        self.driver.close()
+        self.driver.quit()
 
     def reg_object(self, element):
         match element:
