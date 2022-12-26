@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
 import time
 
 import pytest
@@ -22,14 +20,15 @@ class TestWebsite:
 
         self.driver.maximize_window()
         self.driver.implicitly_wait(15)
-        self.driver.get("https://app.tandatanganku.com/")
+
+        self.driver.get("https://app.digisign.id/")
 
         yield
 
         self.driver.close()
         self.driver.quit()
 
-    def reg_object(self, element):
+    def reg_and_log_object(self, element):
         match element:
             case "link_reg":
                 return self.driver.find_element(By.XPATH, "/html/body/div/div/div/div[1]/div[2]/div[1]/a[1]")
@@ -45,3 +44,14 @@ class TestWebsite:
                 return self.driver.find_element(By.XPATH, "//button[@type='submit']")
             case "saldo_sign":
                 return self.driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[11]/div[3]/div/div/div")
+            case "password_salah":
+                return self.driver.find_element(By.XPATH, "//div[@class='alert alert-danger']")
+            case "error_username":
+                return self.driver.find_element(By.XPATH, "//*[@id='e_username']")
+            case "pass_error":
+                return self.driver.find_element(
+                    By.XPATH, "//*[text() = '[Password salah sebanyak 3x. Silakan coba kembali setelah 10 menit.]']")
+
+    # def document_object(self, element):
+    #     match element:
+    #         case
