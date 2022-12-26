@@ -52,6 +52,7 @@ class TestWebsite:
                 return self.driver.find_element(
                     By.XPATH, "//*[text() = '[Password salah sebanyak 3x. Silakan coba kembali setelah 10 menit.]']")
 
-    # def document_object(self, element):
-    #     match element:
-    #         case
+    def document_object(self, element):
+        match element:
+            case "need_sign":
+                return self.driver.find_element(By.XPATH, "//a[contains(@href, 'needsign')]")
