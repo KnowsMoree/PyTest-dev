@@ -13,14 +13,14 @@ def delay(sec):
 
 
 def select_option(element):
-    return Select(element)
+    Select(element)
 
 
 class TestWebsite:
     driver = webdriver.Chrome(ChromeDriverManager().install())
     testing_url = {
         "prod": "https://app.digisign.id/",
-        "testing": "https://app.tandatanganku.com"
+        "test": "https://app.tandatanganku.com"
     }
 
     @pytest.fixture(autouse=True)
@@ -36,9 +36,6 @@ class TestWebsite:
         self.actions = ActionChains(self.driver)
 
         yield
-
-        # self.driver.close()
-        # self.driver.quit()
 
     def reg_and_log_object(self, element):
         match element:
