@@ -2,17 +2,26 @@ import time
 
 import pytest
 from selenium import webdriver
-from selenium.webdriver import Keys
+from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.support.ui import Select
 
 
 def delay(sec):
     time.sleep(sec)
 
 
+def select_option(element):
+    return Select(element)
+
+
 class TestWebsite:
     driver = webdriver.Chrome(ChromeDriverManager().install())
+    testing_url = {
+        "prod": "https://app.digisign.id/",
+        "testing": "https://app.tandatanganku.com"
+    }
 
     @pytest.fixture(autouse=True)
     def browser_setup_and_teardown(self):
@@ -22,7 +31,9 @@ class TestWebsite:
         self.driver.implicitly_wait(15)
         self.driver.delete_all_cookies()
 
-        self.driver.get("https://app.digisign.id/")
+        self.driver.get(self.testing_url["prod"])
+
+        self.actions = ActionChains(self.driver)
 
         yield
 
@@ -55,11 +66,40 @@ class TestWebsite:
 
     def document_object(self, element):
         match element:
+            case "filter_action":
+                return self.driver.find_element(By.XPATH, "//select[@name='status']")
+            case "filter_submit":
+                return self.driver.find_element(By.XPATH, "//button[contains(@type, 'submit')]")
+            case "choose_account":
+                return self.driver.find_element(By.XPATH, "/html/body/div/div/div/div/section/form/a[1]/div")
+            case "check_seal_doc":
+                return self.driver.find_element(By.XPATH, "//label[.//*[@id='ckseal']]")
             case "nav_inbox":
                 return self.driver.find_element(By.XPATH, "//li[.//i[@class='ti-write']]")
             case "kotak_masuk":
                 return self.driver.find_element(
                     By.XPATH, "/html/body/div[1]/div[1]/div[2]/div[3]/div[1]/nav/ul/li[2]/ul/li[3]/a")
+            case "name_first_receiver":
+                return self.driver.find_element(By.XPATH, "//*[@id='name-1']")
+            case "email_first_receiver":
+                return self.driver.find_element(By.XPATH, "//*[@id='email-1']")
+            case "btn_detail_doc":
+                return self.driver.find_element(By.XPATH, "//*[@id='detail_doc']")
+            case "btn_add_sign":
+                return self.driver.find_element(By.XPATH, "//button[@onclick='adds_ttd()']")
+            case "sign_zone_1":
+                return self.driver.find_element(By.XPATH, "//div[@class='foo blue ui-resizable']")
+            case "lock_sign_1":
+                return self.driver.find_element(By.XPATH, "//*[@id='lock1']")
+            case "resizing_zone_1":
+                return self.driver.find_element(By.XPATH, "//div[contains(@class, 'ui-icon')]")
+            case "btn_set_email":
+                return self.driver.find_element(
+                    By.XPATH, "/html/body/div[1]/div[2]/div[2]/div[16]/div/div/div/div/div/div[3]/button")
+            case "process_send_doc":
+                return self.driver.find_element(By.XPATH, "//*[@id='pros']")
+            case "btn_send_doc":
+                return self.driver.find_element(By.XPATH, "//*[@id='send']")
             case "need_sign":
                 return self.driver.find_element(By.XPATH, "//a[contains(@href, 'needsign')]")
             case "check_all_sign":
@@ -74,6 +114,8 @@ class TestWebsite:
                 return self.driver.find_element(By.XPATH, "//label[@for='checkbox2']")
             case "check_doc3":
                 return self.driver.find_element(By.XPATH, "//label[@for='checkbox3']")
+            case "check_doc4":
+                return self.driver.find_element(By.XPATH, "//label[@for='checkbox4']")
             case "otp_input_number":
                 return self.driver.find_element(By.XPATH, "//*[@id='otp']")
             case "otp_email":
