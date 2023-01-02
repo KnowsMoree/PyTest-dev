@@ -2,17 +2,16 @@ import main
 
 
 class TestDoc(main.TestWebsite):
-    def test_upload_doc(self):
-        self.reg_and_log_object("uname").send_keys("wahyuhidy" + self.keys.ENTER)
-        self.reg_and_log_object("password").send_keys("Kijang321!" + self.keys.ENTER)
+    def test_upload_doc_with_click(self):
+        self.reg_and_log_object("uname").send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.reg_and_log_object("password").send_keys("Coba1234" + self.keys.ENTER)
         main.delay(2)
-        self.reg_and_log_object("doc_file").send_keys(
-            "C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
-        self.reg_and_log_object("doc_submit").click()
+        self.reg_and_log_object("btn_input_file").click()
+        self.driver.find_element(self.by.XPATH, "//body").send_keys(self.keys.ENTER)
+        # self.reg_and_log_object("doc_file").send_keys(
+        #     "C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
+        # self.reg_and_log_object("doc_submit").click()
         main.delay(4)
-        self.document_object("check_seal_doc").click()
-        self.document_object("name_first_receiver").send_keys("digisign")
-        self.document_object("email_first_receiver").send_keys("ditest10@tandatanganku.com")
 
     def test_pertama(self):
         self.reg_and_log_object("uname").send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)

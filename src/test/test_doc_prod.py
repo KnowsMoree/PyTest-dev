@@ -78,3 +78,85 @@ class TestDocProd(main.TestWebsite):
         main.delay(3)
         self.document_object("btn_selesai").click()
         main.delay(5)
+
+    def test_only_direct_doc(self):
+        self.reg_and_log_object("uname").send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.reg_and_log_object("password").send_keys("Coba1234", self.keys.ENTER)
+        main.delay(2)
+        self.document_object("link_tooltip1").click()
+        main.delay(4)
+
+    def test_continue_direct_doc(self):
+        self.test_only_direct_doc()
+        self.document_object("button_proses_sign_one").click()
+        main.delay(2)
+        assert self.document_object("modal_title_process") is not None
+
+    def test_agreement_process(self):
+        self.test_continue_direct_doc()
+        self.document_object("label_iya").click()
+        main.delay(3)
+
+    def test_denial_process(self):
+        self.test_continue_direct_doc()
+        self.document_object("label_tidak").click()
+
+        main.delay(3)
+        assert self.document_object("text_area_reason") is not None
+
+    def test_otp_sms_process(self):
+        self.test_continue_direct_doc()
+        self.document_object("btn_otp_sms").click()
+        main.delay(3)
+
+    def test_otp_email_process(self):
+        self.test_continue_direct_doc()
+        self.document_object("btn_otp_email").click()
+        main.delay(3)
+
+    def test_otp_false(self):
+        self.test_continue_direct_doc()
+        self.document_object("btn_otp_email").click()
+        main.delay(0.5)
+        self.document_object("otp_input_number").send_keys("002383")
+        main.delay(3)
+
+        self.document_object("btn_prosign").click()
+        self.document_object("btn_saya_yakin").click()
+        main.delay(3)
+
+        assert self.document_object("title_verify_false") is not None
+        self.document_object("btn_swal_ok").click()
+        main.delay(2)
+
+    def test_not_sure_process(self):
+        self.test_continue_direct_doc()
+        self.document_object("btn_prosign").click()
+        self.document_object("btn_tidak_yakin").click()
+        main.delay(2)
+
+        assert self.document_object("title_proses_dibatalkan") is not None
+
+        self.document_object("btn_swal_ok").click()
+        main.delay(2)
+
+        assert self.document_object("title_modal_proses") is not None
+
+    def test_sure_process(self):
+        self.test_otp_email_process()
+
+        check = self.document_object("btn_gagal_otp").is_displayed()
+
+        print(f"\nbutton gagal is {check}")
+
+        if check is True:
+            self.document_object("btn_gagal_otp").click()
+            main.delay(3)
+        elif check is False:
+            main.delay(1)
+            self.document_object("btn_prosign").click()
+            main.delay(2)
+            self.document_object("btn_saya_yakin").click()
+            main.delay(2)
+        else:
+            pass
