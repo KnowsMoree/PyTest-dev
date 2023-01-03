@@ -64,6 +64,67 @@ class TestWebsite:
             case "pass_error":
                 return self.driver.find_element(
                     By.XPATH, "//*[text() = '[Password salah sebanyak 3x. Silakan coba kembali setelah 10 menit.]']")
+            case "error_format16_nik":
+                return self.driver.find_element(
+                    By.XPATH, "//div[@id = 'e_idcard' and (text() = 'Harus 16 Digit.' or . = 'Harus 16 Digit.')]")
+            case "error_format_false":
+                return self.driver.find_element(By.XPATH, "//*[text() = 'Format NIK Salah']")
+            case "birth_place_input":
+                return self.driver.find_element(By.XPATH, "//*[@id='lbrith']")
+            case "btn_next_step1":
+                return self.driver.find_element(By.XPATH, "//button[@onclick='step1()']")
+            case "validation_name":
+                return self.driver.find_element(
+                    By.XPATH, "//input[@id='name'][contains(@class,'form-control input-md is-invalid')]")
+            case "name_input":
+                return self.driver.find_element(By.XPATH, "//*[@id='name']")
+            case "gender_select":
+                return self.driver.find_element(By.XPATH, "//*[@id='jk']")
+            case "validation_place":
+                return self.driver.find_element(
+                    By.XPATH, "//input[@id='lbrith'][@class='form-control input-md is-invalid']")
+            case "step2":
+                return self.driver.find_element(By.XPATH, "//*[text() = 'Informasi Akun']")
+            case "password_reg":
+                return self.driver.find_element(By.XPATH, "//*[@id='password']")
+            case "password_confirmation":
+                return self.driver.find_element(By.XPATH, "//*[@id='password2']")
+            case "email_input_register":
+                return self.driver.find_element(By.XPATH, "//*[@id='email']")
+            case "phone_input_register":
+                return self.driver.find_element(By.XPATH, "//*[@id='handphone']")
+            case "step3":
+                return self.driver.find_element(By.XPATH, "//button[@onclick='step3()']")
+            case "validation_username":
+                return self.driver.find_element(
+                    By.XPATH, "//input[@id='username'][@class='form-control input-md is-invalid']")
+            case "err_username":
+                return self.driver.find_element(By.XPATH, "//*[@id='e_username']")
+            case "username_registered":
+                return self.driver.find_element(By.XPATH, "/html/body/div[11]/form/div/div[4]/div[1]/div/div[2]/i")
+            case "password_too_short":
+                return self.driver.find_element(By.XPATH, "//*[text() = 'Password terlalu pendek, min 8 character']")
+            case "password_minus_symbol":
+                return self.driver.find_element(
+                    By.XPATH, "//*[text() = 'Password harus mengandung minimal 1 Simbol/Karakter Spesial']")
+            case "strong_password":
+                return self.driver.find_element(By.XPATH, "//*[text() = 'Strong password']")
+            case "pass_not_same":
+                return self.driver.find_element(By.XPATH, "//*[@id='e_password2']")
+            case "validation_email":
+                return self.driver.find_element(
+                    By.XPATH, "//input[@id='email'][@class='form-control input-md is-invalid']")
+            case "email_taken":
+                return self.driver.find_element(By.XPATH, "//*[text() = 'Email sudah terdaftar gunakan email lain']")
+            case "email_invalid":
+                return self.driver.find_element(By.XPATH, "//*[text() = 'Invalid Email Address']")
+            case "number_invalid":
+                return self.driver.find_element(
+                    By.XPATH, "//input[@id='handphone'][@class='NumOnly form-control input-md is-invalid']")
+            case "false_number_format":
+                return self.driver.find_element(By.XPATH, "//*[text() = 'Format nomor salah']")
+            case "number_less_than_8":
+                return self.driver.find_element(By.XPATH, "//*[text() = 'Nomor HP Minimal 8 digit']")
 
     def document_object(self, element):
         match element:
