@@ -149,12 +149,12 @@ class TestReg(main.TestWebsite):
         assert self.reg_and_log_object("validation_email") is not None
 
     def test_email_taken(self, **kwargs):
-        email = kwargs.get("email", "ditest6@tandatanganku.com")
+        email = kwargs.get("email", "ditest10@tandatanganku.com")
         test_obj = kwargs.get("obj", "email_taken")
         self.test_birth_place_validation(use=True)
-
-        self.reg_and_log_object("email_input_register").send_keys(email)
         main.delay(2)
+        self.reg_and_log_object("email_input_register").send_keys(email)
+        main.delay(3)
 
         assert self.reg_and_log_object(test_obj) is not None
 
@@ -197,7 +197,7 @@ class TestReg(main.TestWebsite):
         self.reg_and_log_object("email_input_register").send_keys("amang78@spambox.xyz")
         self.reg_and_log_object("phone_input_register").send_keys("894381216")
 
-        main.delay(3)
+        main.delay(5)
         self.actions.double_click(self.reg_and_log_object("step3")).perform()
 
         if redundancy:
@@ -210,9 +210,11 @@ class TestReg(main.TestWebsite):
 
         main.delay(2)
         self.reg_and_log_object("span_ktp_input").click()
-        main.delay(1)
-        self.robot.keyUp("escape")
-        self.robot.keyDown("escape")
+        main.delay(4)
+        # self.robot.keyUp("escape")
+        # self.robot.keyDown("escape")
+        self.robot.press("escape")
+        main.delay(2)
         self.reg_and_log_object("ktp_input").send_keys(
-            "C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
-        main.delay(6)
+            "C:\\Users\\dignitas\\Downloads\\npwp_20221101055126 (1).jpg")
+        main.delay(5)

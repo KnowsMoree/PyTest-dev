@@ -6,6 +6,7 @@ from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.remote.webelement import WebElement
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.support.ui import Select
 import pyautogui
 
@@ -18,10 +19,19 @@ def select_option(element):
     Select(element)
 
 
+def driver_manager(driver):
+    if driver is "chrome":
+        return webdriver.Chrome(ChromeDriverManager().install())
+    elif driver is "firefox":
+        return webdriver.Firefox()
+
+
 class TestWebsite:
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    # web browser used to test
+    driver = driver_manager("chrome")
+
     testing_url = {
-        "prod": "https://app.digisign.id/",
+        "prod": "https://app.digisign.id",
         "test": "https://app.tandatanganku.com"
     }
 
@@ -52,6 +62,8 @@ class TestWebsite:
                 return self.driver.find_element(By.XPATH, "//*[@id='username']")
             case "password":
                 return self.driver.find_element(By.XPATH, "//input[@id='pd']")
+            case "password_submit":
+                return self.driver.find_element(By.XPATH, "//*[@id='submit']")
             case "doc_file":
                 return self.driver.find_element(By.XPATH, "//input[@type='file']")
             case "btn_input_file":
