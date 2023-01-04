@@ -186,6 +186,33 @@ class TestReg(main.TestWebsite):
 
         assert self.reg_and_log_object("number_less_than_8") is not None
 
-    # lanjut nanti
-    def test_true_identity(self):
-        pass
+    def test_true_identity(self, **kwargs):
+        redundancy = kwargs.get("redundancy", False)
+        self.test_birth_place_validation(use=True)
+
+        self.reg_and_log_object("uname").send_keys("asdteuse782")
+        main.delay(2)
+        self.reg_and_log_object("password_reg").send_keys("Mamang123!")
+        self.reg_and_log_object("password_confirmation").send_keys("Mamang123!")
+        self.reg_and_log_object("email_input_register").send_keys("amang78@spambox.xyz")
+        self.reg_and_log_object("phone_input_register").send_keys("894381216")
+
+        main.delay(3)
+        self.actions.double_click(self.reg_and_log_object("step3")).perform()
+
+        if redundancy:
+            pass
+        else:
+            assert self.reg_and_log_object("step3_title") is not None
+
+    def test_input_ktp(self):
+        self.test_true_identity(redundancy=True)
+
+        main.delay(2)
+        self.reg_and_log_object("span_ktp_input").click()
+        main.delay(1)
+        self.robot.keyUp("escape")
+        self.robot.keyDown("escape")
+        self.reg_and_log_object("ktp_input").send_keys(
+            "C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
+        main.delay(6)

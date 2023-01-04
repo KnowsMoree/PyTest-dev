@@ -4,8 +4,10 @@ import pytest
 from selenium import webdriver
 from selenium.webdriver import Keys, ActionChains
 from selenium.webdriver.common.by import By
+from selenium.webdriver.remote.webelement import WebElement
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import Select
+import pyautogui
 
 
 def delay(sec):
@@ -27,6 +29,7 @@ class TestWebsite:
     def browser_setup_and_teardown(self):
         self.keys = Keys
         self.by = By
+        self.robot = pyautogui
 
         self.driver.maximize_window()
         self.driver.implicitly_wait(15)
@@ -38,7 +41,7 @@ class TestWebsite:
 
         yield
 
-    def reg_and_log_object(self, element):
+    def reg_and_log_object(self, element: str) -> WebElement:
         """Registration Object"""
         match element:
             case "link_reg":
@@ -125,8 +128,15 @@ class TestWebsite:
                 return self.driver.find_element(By.XPATH, "//*[text() = 'Format nomor salah']")
             case "number_less_than_8":
                 return self.driver.find_element(By.XPATH, "//*[text() = 'Nomor HP Minimal 8 digit']")
+            case "step3_title":
+                return self.driver.find_element(
+                    By.XPATH, "//h3[(text() = 'Foto dan Tandatangan' or . = 'Foto dan Tandatangan')]")
+            case "ktp_input":
+                return self.driver.find_element(By.XPATH, "//input[@type='file']")
+            case "span_ktp_input":
+                return self.driver.find_element(By.XPATH, "//span[.//*[@id='imgektp']]")
 
-    def document_object(self, element):
+    def document_object(self, element: str) -> WebElement:
         match element:
             case "filter_action":
                 return self.driver.find_element(By.XPATH, "//select[@name='status']")
