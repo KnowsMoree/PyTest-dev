@@ -14,7 +14,7 @@ class TestLogin(main.FormObject):
         main.delay(2)
         self.password().send_keys("kijang" + self.keys.ENTER)
         main.delay(5)
-        assert self.passowrd_salah() is not None
+        assert self.password_salah() is not None
 
     def test_username_false(self):
         self.username().send_keys("cuicui" + self.keys.ENTER)

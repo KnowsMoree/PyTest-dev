@@ -174,8 +174,14 @@ class TestReg(main.FormObject):
         main.delay(2)
         assert self.number_invalid() is not None
 
-    # def test_number_taken(self):
-    #     self.test_birth_place_validation(use=True)
+    def test_number_taken(self):
+        self.test_birth_place_validation(use=True)
+        self.username().send_keys("kijang")
+
+        self.phone_input_register().send_keys("87804070516")
+        main.delay(4)
+
+        assert self.number_taken() is not None
 
     def test_false_format_number(self):
         self.test_birth_place_validation(use=True)

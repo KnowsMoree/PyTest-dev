@@ -1,0 +1,369 @@
+1672895754636	geckodriver	INFO	Listening on 127.0.0.1:55205
+1672895757722	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "55206" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileY5Sv2T"
+1672895758141	Marionette	INFO	Marionette enabled
+1672895758145	Marionette	INFO	Listening on port 55217
+Read port: 55217
+WebDriver BiDi listening on ws://127.0.0.1:55206
+1672895758226	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileY5Sv2T\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:55206/devtools/browser/7864aa94-c283-4f18-b140-74472dfe5b5f
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672901328229	Marionette	INFO	Stopped listening on port 55217
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1672903487441	geckodriver	INFO	Listening on 127.0.0.1:64707
+1672903490516	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "64708" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileYU6Mpq"
+1672903490746	Marionette	INFO	Marionette enabled
+1672903490750	Marionette	INFO	Listening on port 64724
+WebDriver BiDi listening on ws://127.0.0.1:64708
+Read port: 64724
+1672903490920	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileYU6Mpq\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64708/devtools/browser/a864e113-a681-4025-8d9b-0499c869e426
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672903673675	Marionette	INFO	Stopped listening on port 64724
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "64888" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilefcyn5a"
+1672903574598	Marionette	INFO	Marionette enabled
+1672903574602	Marionette	INFO	Listening on port 64903
+Read port: 64903
+WebDriver BiDi listening on ws://127.0.0.1:64888
+1672903574695	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilefcyn5a\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:64888/devtools/browser/682dbe4b-a69d-4d0b-95ef-c85f658b0a7f
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672903672779	Marionette	INFO	Stopped listening on port 64903
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "65052" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileWmzFOQ"
+1672903638651	Marionette	INFO	Marionette enabled
+1672903638655	Marionette	INFO	Listening on port 65072
+Read port: 65072
+WebDriver BiDi listening on ws://127.0.0.1:65052
+1672903638748	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileWmzFOQ\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65052/devtools/browser/d4155405-a4b8-456e-9f74-99e542475e6f
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672904378771	Marionette	INFO	Stopped listening on port 65072
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "65380" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilewUWI8t"
+1672903819023	Marionette	INFO	Marionette enabled
+1672903819026	Marionette	INFO	Listening on port 65391
+Read port: 65391
+WebDriver BiDi listening on ws://127.0.0.1:65380
+1672903819095	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilewUWI8t\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:65380/devtools/browser/7693ef75-715a-4477-8d93-e3206804b923
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672904379780	Marionette	INFO	Stopped listening on port 65391
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "49304" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileemDm2j"
+1672904001212	Marionette	INFO	Marionette enabled
+1672904001215	Marionette	INFO	Listening on port 49319
+Read port: 49319
+WebDriver BiDi listening on ws://127.0.0.1:49304
+1672904001282	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileemDm2j\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:49304/devtools/browser/a4efce55-34c8-48d5-ab66-21f058cb99bd
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672904384222	Marionette	INFO	Stopped listening on port 49319
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1672904603578	geckodriver	INFO	Listening on 127.0.0.1:50242
+1672904606665	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50243" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofile5K39Xp"
+1672904606885	Marionette	INFO	Marionette enabled
+1672904606888	Marionette	INFO	Listening on port 50259
+Read port: 50259
+WebDriver BiDi listening on ws://127.0.0.1:50243
+1672904606956	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofile5K39Xp\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50243/devtools/browser/647928e6-745c-44cb-89eb-e7dc578c6848
+1672904613234	Marionette	INFO	Stopped listening on port 50259
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+!!! error running onStopped callback: TypeError: callback is not a function
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+sendPing@resource://gre/modules/EventPing.jsm:51:30
+_submitPing@resource://gre/modules/EventPing.jsm:229:12
+shutdown@resource://gre/modules/EventPing.jsm:112:10
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:940:31
+shutdown/<@resource://gre/modules/TelemetryControllerParent.jsm:1010:24
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+saveShutdownPings@resource://gre/modules/TelemetrySession.jsm:982:34
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1232:20
+cleanup@resource://gre/modules/TelemetrySession.jsm:1239:9
+shutdownChromeProcess@resource://gre/modules/TelemetrySession.jsm:1256:14
+shutdown@resource://gre/modules/TelemetrySession.jsm:247:17
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:959:35
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  Waiting for ping task
+          Phase: TelemetryController: Waiting for pending ping activity
+          State: (none)
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:103:5
+promiseArchivePing@resource://gre/modules/TelemetryArchive.jsm:63:33
+_submitPingLogic@resource://gre/modules/TelemetryControllerParent.jsm:540:48
+send@resource://gre/modules/TelemetryControllerParent.jsm:628:24
+submitExternalPing@resource://gre/modules/TelemetryControllerParent.jsm:182:17
+saveShutdownPings@resource://gre/modules/TelemetrySession.jsm:1014:36
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1232:20
+cleanup@resource://gre/modules/TelemetrySession.jsm:1239:9
+shutdownChromeProcess@resource://gre/modules/TelemetrySession.jsm:1256:14
+shutdown@resource://gre/modules/TelemetrySession.jsm:247:17
+_cleanupOnShutdown@resource://gre/modules/TelemetryControllerParent.jsm:959:35
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: A blocker encountered an error while we were waiting.
+          Blocker:  TelemetryController: shutting down
+          Phase: profile-before-change-telemetry
+          State: Error getting state: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange" at addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+getShutdownState@resource://gre/modules/TelemetrySend.jsm:1687:7
+getShutdownState@resource://gre/modules/TelemetrySend.jsm:369:30
+_getState@resource://gre/modules/TelemetryControllerParent.jsm:1058:38
+setupTelemetry/<@resource://gre/modules/TelemetryControllerParent.jsm:917:18
+safeGetState@resource://gre/modules/AsyncShutdown.jsm:242:17
+Barrier/addBlocker/promise<@resource://gre/modules/AsyncShutdown.jsm:751:20
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+WARNING: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+WARNING: addBlocker@resource://gre/modules/AsyncShutdown.jsm:703:15
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:511:26
+addBlocker@resource://gre/modules/AsyncShutdown.jsm:450:15
+setupShutdown@resource://gre/modules/osfile/osfile_async_front.jsm:1563:28
+@resource://gre/modules/osfile/osfile_async_front.jsm:1583:16
+@resource://gre/modules/osfile.jsm:12:30
+@resource://gre/modules/TelemetryStorage.jsm:19:28
+removeAbortedSessionPing@resource://gre/modules/TelemetryControllerParent.jsm:721:5
+removeAbortedSessionPing@resource://gre/modules/TelemetryControllerParent.jsm:249:17
+shutdownChromeProcess/cleanup/<@resource://gre/modules/TelemetrySession.jsm:1235:42
+observe@resource://gre/modules/AsyncShutdown.jsm:560:16
+
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+JavaScript error: resource://gre/modules/AsyncShutdown.jsm, line 703: Error: Phase "profile-before-change" is finished, it is too late to register completion condition "OS.File: flush I/O queued before profileBeforeChange"
+1672904637447	geckodriver	INFO	Listening on 127.0.0.1:50330
+1672904640533	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "50331" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofile4IQmV6"
+1672904640750	Marionette	INFO	Marionette enabled
+1672904640754	Marionette	INFO	Listening on port 50342
+Read port: 50342
+WebDriver BiDi listening on ws://127.0.0.1:50331
+1672904640823	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofile4IQmV6\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50331/devtools/browser/4d566baa-ac22-4f93-8122-8a6f6f5a1334
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1672905955142	Marionette	INFO	Stopped listening on port 50342
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilekdXeuX"
+1672905011391	Marionette	INFO	Marionette enabled
+1672905011394	Marionette	INFO	Listening on port 50822
+WebDriver BiDi listening on ws://127.0.0.1:50807
+Read port: 50822
+1672905011563	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilekdXeuX\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50807/devtools/browser/63580431-cdfd-47d7-8a23-a1568d109281
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1672905956805	Marionette	INFO	Stopped listening on port 50822
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilejCE9Ky"
+1672905046208	Marionette	INFO	Marionette enabled
+1672905046211	Marionette	INFO	Listening on port 50916
+Read port: 50916
+WebDriver BiDi listening on ws://127.0.0.1:50907
+1672905046280	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilejCE9Ky\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:50907/devtools/browser/bf74ba90-e6a1-4fe2-bf14-a00fb85f1d9c
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672905054533	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+JavaScript error: , line 0: NS_ERROR_NOT_AVAILABLE
+1672905954130	Marionette	INFO	Stopped listening on port 50916
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileLZB8eh"
+1672905164325	Marionette	INFO	Marionette enabled
+1672905164328	Marionette	INFO	Listening on port 51132
+Read port: 51132
+WebDriver BiDi listening on ws://127.0.0.1:51121
+1672905164396	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileLZB8eh\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51121/devtools/browser/bdc037ab-658e-4322-990f-fb640b30ea82
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672912447363	Marionette	INFO	Stopped listening on port 51132
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "51263" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilevPcEZM"
+1672905228063	Marionette	INFO	Marionette enabled
+1672905228067	Marionette	INFO	Listening on port 51280
+Read port: 51280
+WebDriver BiDi listening on ws://127.0.0.1:51263
+1672905228166	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilevPcEZM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51263/devtools/browser/693b39c8-7597-4774-9e12-7c85c9ec3a5d
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672905237638	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1672905951582	Marionette	INFO	Stopped listening on port 51280
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "51369" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilezjmOpu"
+1672905272678	Marionette	INFO	Marionette enabled
+1672905272683	Marionette	INFO	Listening on port 51382
+Read port: 51382
+WebDriver BiDi listening on ws://127.0.0.1:51369
+1672905272779	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilezjmOpu\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51369/devtools/browser/ee10910e-ded4-413d-a251-2d8ad6e00b72
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672905295026	Marionette	WARN	TimedPromise timed out after 500 ms: stacktrace:
+TimedPromise/<@chrome://remote/content/marionette/sync.sys.mjs:219:24
+TimedPromise@chrome://remote/content/marionette/sync.sys.mjs:204:10
+interaction.flushEventLoop@chrome://remote/content/marionette/interaction.sys.mjs:425:10
+webdriverClickElement@chrome://remote/content/marionette/interaction.sys.mjs:173:31
+1672905952372	Marionette	INFO	Stopped listening on port 51382
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "51497" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilebpMdkL"
+1672905336331	Marionette	INFO	Marionette enabled
+1672905336335	Marionette	INFO	Listening on port 51517
+Read port: 51517
+WebDriver BiDi listening on ws://127.0.0.1:51497
+1672905336441	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilebpMdkL\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:51497/devtools/browser/b58575bb-e114-4ec6-b56f-a4bb56810f61
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672905953318	Marionette	INFO	Stopped listening on port 51517
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1672912943139	geckodriver	INFO	Listening on 127.0.0.1:62130
+1672912946262	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "62131" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileHhhL5g"
+1672912946612	Marionette	INFO	Marionette enabled
+1672912946615	Marionette	INFO	Listening on port 62147
+WebDriver BiDi listening on ws://127.0.0.1:62131
+Read port: 62147
+1672912946789	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileHhhL5g\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62131/devtools/browser/329e9417-a046-4832-8c00-e11686e37f81
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672913504451	Marionette	INFO	Stopped listening on port 62147
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "62291" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilegvMbgn"
+1672913005415	Marionette	INFO	Marionette enabled
+1672913005418	Marionette	INFO	Listening on port 62311
+WebDriver BiDi listening on ws://127.0.0.1:62291
+Read port: 62311
+1672913005591	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilegvMbgn\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:62291/devtools/browser/311ba1ec-d990-4311-a20e-e2b9663e40e3
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672913505245	Marionette	INFO	Stopped listening on port 62311
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+remote-debugging-port" "63036" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilePTcxWM"
+1672913311575	Marionette	INFO	Marionette enabled
+1672913311580	Marionette	INFO	Listening on port 63053
+Read port: 63053
+WebDriver BiDi listening on ws://127.0.0.1:63036
+1672913311677	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilePTcxWM\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63036/devtools/browser/f1f337c9-118b-46c2-bbf8-a693ba07ce04
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672913419674	geckodriver	INFO	Listening on 127.0.0.1:63372
+1672913422773	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63373" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilejNR79e"
+1672913423026	Marionette	INFO	Marionette enabled
+1672913423030	Marionette	INFO	Listening on port 63393
+WebDriver BiDi listening on ws://127.0.0.1:63373
+Read port: 63393
+1672913423229	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofilejNR79e\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63373/devtools/browser/5b9fcdff-4eba-472f-b55e-8d5a6836edef
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."
+1672913506026	Marionette	INFO	Stopped listening on port 63393
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+1672913509036	geckodriver	INFO	Listening on 127.0.0.1:63652
+1672913513047	geckodriver	INFO	Listening on 127.0.0.1:63663
+1672913516108	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "63664" "--remote-allow-hosts" "localhost" "-no-remote" "-profile" "C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileARdAMN"
+1672913516335	Marionette	INFO	Marionette enabled
+1672913516338	Marionette	INFO	Listening on port 63683
+WebDriver BiDi listening on ws://127.0.0.1:63664
+Read port: 63683
+1672913516506	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\dignitas\\AppData\\Local\\Temp\\rust_mozprofileARdAMN\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://127.0.0.1:63664/devtools/browser/6e1c949a-bfd1-493d-8d14-b5aa1ace779b
+JavaScript error: resource://gre/modules/URIFixup.sys.mjs, line 302: NS_ERROR_FAILURE: Should pass a non-null uri
+console.warn: LoginRecipes: "Falling back to a synchronous message for: https://app.digisign.id."

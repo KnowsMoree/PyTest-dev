@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import Select
 class TestDocProd(main.DocObject, main.FormObject):
     def test_upload_doc_on_email_corp(self):
         self.username().send_keys("wahyuhidy" + self.keys.ENTER)
+        main.delay(2)
         self.password().send_keys("Kijang321!" + self.keys.ENTER)
 
         main.delay(1)

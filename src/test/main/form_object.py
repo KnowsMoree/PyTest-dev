@@ -29,7 +29,7 @@ class FormObject(main.TestWebsite):
     def doc_submit(self):
         return self.driver.find_element(self.by.XPATH, "//button[@type='submit']")
 
-    def passowrd_salah(self):
+    def password_salah(self):
         return self.driver.find_element(self.by.XPATH, "//div[@class='alert alert-danger']")
 
     def error_username(self):
@@ -113,6 +113,11 @@ class FormObject(main.TestWebsite):
 
     def email_taken(self):
         return self.driver.find_element(self.by.XPATH, "//*[text() = 'Email sudah terdaftar gunakan email lain']")
+
+    def number_taken(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "//div[@id = 'e_handphone' and (text() = 'No HP sudah terdaftar gunakan nomor lain' or . = 'No HP sudah terdaftar gunakan nomor lain')]")
 
     def email_invalid(self):
         return self.driver.find_element(self.by.XPATH, "//*[text() = 'Invalid Email Address']")
