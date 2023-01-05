@@ -176,10 +176,13 @@ class TestReg(main.FormObject):
 
     def test_number_taken(self):
         self.test_birth_place_validation(use=True)
-        self.username().send_keys("kijang")
 
         self.phone_input_register().send_keys("87804070516")
         main.delay(4)
+
+        is_display = self.number_taken().is_displayed()
+
+        print(f"\nnumber taken is: {is_display}")
 
         assert self.number_taken() is not None
 
