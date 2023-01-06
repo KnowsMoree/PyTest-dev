@@ -23,7 +23,7 @@ def driver_manager(driver):
 
 class TestWebsite:
     # web browser used to test
-    driver = driver_manager("firefox")
+    driver = driver_manager("chrome")
 
     # url to test
     url = {

@@ -36,6 +36,9 @@ class DocObject(main.TestWebsite):
     def lock_sign_1(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='lock1']")
 
+    def lock_paraf_1(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='lockinit1']")
+
     def resizing_zone_1(self):
         return self.driver.find_element(self.by.XPATH, "//div[contains(@class, 'ui-icon')]")
 
@@ -43,7 +46,7 @@ class DocObject(main.TestWebsite):
         return self.driver.find_element(
             self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[16]/div/div/div/div/div/div[3]/button")
 
-    def process_send_doc(self):
+    def btn_process_send_doc(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='pros']")
 
     def btn_send_doc(self):
@@ -143,3 +146,63 @@ class DocObject(main.TestWebsite):
 
     def btn_gagal_otp(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='bModal']")
+
+    def button_add_me(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='add_me']")
+
+    def select_action_need(self):
+        return self.driver.find_element(self.by.XPATH, "//select[@id='ck1']")
+
+    def select_action_need_2(self):
+        return self.driver.find_element(self.by.XPATH, "//select[@id='ck2']")
+
+    def button_add_receiver(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='add_re']")
+
+    def input_name_receiver_2(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='name-2']")
+
+    def input_email_receiver_2(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='email-2']")
+
+    def canvas(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='pdf-canvas']")
+
+    def label_sort_sign(self):
+        return self.driver.find_element(self.by.XPATH, "//label[@for='seq1']")
+
+    def btn_choose_expired_date(self):
+        return self.driver.find_element(self.by.XPATH, "//i[@role='right-icon']")
+
+    def btn_previous_month_date(self):
+        return self.driver.find_element(self.by.XPATH, "//i[@class='gj-icon chevron-left']")
+
+    def date(self):
+        return self.driver.find_element(self.by.XPATH, "/html/body/div[2]/div/div[2]/table/tbody/tr[3]/td[4]/div")
+
+    def button_ok_date(self):
+        return self.driver.find_element(self.by.XPATH, "/html/body/div[2]/div/div[3]/button[2]")
+
+    def icon_x_swal(self):
+        return self.driver.find_element(self.by.XPATH, "//span[@class='swal2-x-mark']")
+
+    def button_swal_confirm_ok(self):
+        return self.driver.find_element(self.by.XPATH, "//button[contains(@class, 'swal2-confirm')]")
+
+    def err_email_receiver(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='e_email-1']")
+
+    def err_email_receiver_2(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='e_email-2']")
+
+    def err_name_receiver(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='e_name-1']")
+
+    def button_paraf(self):
+        return self.driver.find_element(self.by.XPATH, "//button[@onclick='adds_init()']")
+
+    def paraf_box(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='imginit-1']")
+
+    def confirm_after_send_doc(self):
+        return self.driver.find_element(self.by.XPATH, "//button[contains(@style, '133,')]")
