@@ -1,44 +1,9 @@
 from selenium.webdriver.support.ui import Select
 from main import DocObject, FormObject, delay
+import time
 
 
 class TestDocProd(DocObject, FormObject):
-    def test_upload_doc_on_email_corp(self):
-        self.username().send_keys("wahyuhidy" + self.keys.ENTER)
-        delay(2)
-        self.password().send_keys("Kijang321!" + self.keys.ENTER)
-
-        delay(1)
-
-        self.choose_account().click()
-
-        delay(2)
-
-        self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
-        self.doc_submit().click()
-
-        delay(2)
-
-        self.check_seal_doc().click()
-        self.name_first_receiver().send_keys("digisign")
-        self.email_first_receiver().send_keys("ditest10@tandatanganku.com")
-        self.btn_detail_doc().click()
-        self.btn_add_sign().click()
-
-        delay(4)
-
-        self.actions.drag_and_drop_by_offset(self.sign_zone_1(), 10, 150).perform()
-        self.actions.drag_and_drop_by_offset(self.resizing_zone_1(), 30, 20).perform()
-
-        delay(5)
-
-        self.lock_sign_1().click()
-        self.btn_set_email().click()
-        self.btn_send_doc().click()
-        self.btn_process_send_doc().click()
-
-        delay(10)
-
     def test_need_sign(self):
         self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
         self.password().send_keys("Coba1234" + self.keys.ENTER)
@@ -79,15 +44,18 @@ class TestDocProd(DocObject, FormObject):
         self.btn_selesai().click()
         delay(5)
 
-    def test_only_direct_doc(self):
+    def test_direct_doc(self):
         self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
         self.password().send_keys("Coba1234", self.keys.ENTER)
         delay(2)
+        first = time.time()
         self.link_tooltip1().click()
+        last = time.time() - first
         delay(4)
+        print(f"\ntime to open doc {time.strftime('%H:%M:%S', time.gmtime(last))}")
 
     def test_continue_direct_doc(self):
-        self.test_only_direct_doc()
+        self.test_direct_doc()
         self.button_proses_sign_one().click()
         delay(2)
         assert self.modal_title_process() is not None

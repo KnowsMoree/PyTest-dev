@@ -206,3 +206,6 @@ class DocObject(main.TestWebsite):
 
     def confirm_after_send_doc(self):
         return self.driver.find_element(self.by.XPATH, "//button[contains(@style, '133,')]")
+
+    def link_home(self):
+        return self.driver.find_element(self.by.XPATH, "/html/body/div[1]/div[1]/div[2]/div[3]/div[1]/nav/ul/li[1]/a")

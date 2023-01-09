@@ -1,4 +1,3 @@
-import main
 from main import FormObject, delay
 from selenium.webdriver.support.ui import Select
 
@@ -227,8 +226,7 @@ class TestReg(FormObject):
         delay(2)
         self.span_ktp_input().click()
         delay(4)
-        # self.robot.keyUp("escape")
-        # self.robot.keyDown("escape")
+
         self.robot.press("escape")
         delay(2)
         self.ktp_input().send_keys(

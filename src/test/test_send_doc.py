@@ -5,9 +5,11 @@ from main import delay, DocObject, FormObject
 
 class TestSendDocument(FormObject, DocObject):
     def test_send_document(self):
-        self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.username().send_keys("wahyuhidy" + self.keys.ENTER)
         delay(2)
-        self.password().send_keys("Coba1234" + self.keys.ENTER)
+        self.password().send_keys("Kijang321!" + self.keys.ENTER)
+        delay(4)
+        self.choose_account().click()
         delay(3)
         self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
         delay(4)
@@ -135,38 +137,48 @@ class TestSendDocument(FormObject, DocObject):
 
         delay(5)
 
-    def test_send_document_full(self):
+    def test_send_document_full(self, **kwargs):
+        iteration = kwargs.get('iteration', 1)
         self.username().send_keys("wahyuhidy" + self.keys.ENTER)
         delay(2)
         self.password().send_keys("Kijang321!" + self.keys.ENTER)
         delay(4)
         self.choose_account().click()
 
-        delay(4)
+        for i in range(iteration):
+            delay(2)
+            self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
+            delay(2)
+            self.doc_submit().click()
 
-        self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
-        delay(2)
-        self.doc_submit().click()
+            delay(2)
 
-        delay(2)
+            self.check_seal_doc().click()
+            self.name_first_receiver().send_keys("digisign")
+            self.email_first_receiver().send_keys("ditest10@tandatanganku.com")
+            self.btn_detail_doc().click()
+            delay(2)
+            self.btn_add_sign().click()
 
-        self.check_seal_doc().click()
-        self.name_first_receiver().send_keys("digisign")
-        self.email_first_receiver().send_keys("ditest10@tandatanganku.com")
-        self.btn_detail_doc().click()
-        delay(2)
-        self.btn_add_sign().click()
+            delay(4)
 
-        delay(4)
+            self.actions.drag_and_drop_by_offset(self.sign_zone_1(), 10, 150).perform()
+            self.actions.drag_and_drop_by_offset(self.resizing_zone_1(), 30, 20).perform()
 
-        self.actions.drag_and_drop_by_offset(self.sign_zone_1(), 10, 150).perform()
-        self.actions.drag_and_drop_by_offset(self.resizing_zone_1(), 30, 20).perform()
+            delay(5)
 
-        delay(5)
+            self.lock_sign_1().click()
+            self.btn_set_email().click()
+            self.btn_send_doc().click()
+            self.btn_process_send_doc().click()
+            delay(3)
+            self.confirm_after_send_doc().click()
 
-        self.lock_sign_1().click()
-        self.btn_set_email().click()
-        self.btn_send_doc().click()
-        self.btn_process_send_doc().click()
+            if i is len(range(iteration)) - 1:
+                pass
+            else:
+                delay(1)
+                self.link_home().click()
 
-        delay(10)
+    def test_send_doc_with_iterator(self):
+        self.test_send_document_full(iteration=2)
