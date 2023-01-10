@@ -1,7 +1,6 @@
 import time
 import pyautogui
 import pytest
-import datetime
 
 from selenium import webdriver
 from selenium.webdriver import Keys, ActionChains
@@ -38,13 +37,12 @@ class TestWebsite:
         self.keys = Keys
         self.by = By
         self.robot = pyautogui
+        self.actions = ActionChains(self.driver)
 
         self.driver.maximize_window()
         self.driver.implicitly_wait(15)
         self.driver.delete_all_cookies()
 
         self.driver.get(self.url["prod"])
-
-        self.actions = ActionChains(self.driver)
 
         yield
