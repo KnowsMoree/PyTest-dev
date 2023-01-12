@@ -44,7 +44,7 @@ class DocObject(main.TestWebsite):
 
     def btn_set_email(self):
         return self.driver.find_element(
-            self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[16]/div/div/div/div/div/div[3]/button")
+            self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[14]/div/div/div/div/div/div[3]/button")
 
     def btn_process_send_doc(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='pros']")
@@ -94,7 +94,7 @@ class DocObject(main.TestWebsite):
     def link_tooltip1(self):
         return self.driver.find_element(
             self.by.XPATH,
-            "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[2]/div[3]/div/span/a")
+            "/html/body/div[1]/div[2]/div[2]/div/div[4]/div/div/div[1]/div/div/div/div[2]/div[3]/div/span")
 
     def btn_selesai(self):
         return self.driver.find_element(self.by.XPATH, "//a[@class='btn btn-info']")
@@ -199,7 +199,7 @@ class DocObject(main.TestWebsite):
         return self.driver.find_element(self.by.XPATH, "//*[@id='e_name-1']")
 
     def button_paraf(self):
-        return self.driver.find_element(self.by.XPATH, "//button[@onclick='adds_init()']")
+        return self.driver.find_element(self.by.XPATH, "//button[@onclick='add_init()']")
 
     def paraf_box(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='imginit-1']")

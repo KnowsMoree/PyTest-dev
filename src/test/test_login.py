@@ -5,7 +5,7 @@ from main import delay, FormObject
 
 class TestLogin(FormObject):
     def test_login(self):
-        self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         delay(2)
         first = time.time()
         self.password().send_keys("Coba1234" + self.keys.ENTER)

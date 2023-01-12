@@ -5,11 +5,11 @@ from main import delay, DocObject, FormObject
 
 class TestSendDocument(FormObject, DocObject):
     def test_send_document(self):
-        self.username().send_keys("wahyuhidy" + self.keys.ENTER)
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         delay(2)
-        self.password().send_keys("Kijang321!" + self.keys.ENTER)
+        self.password().send_keys("Coba1234" + self.keys.ENTER)
         delay(4)
-        self.choose_account().click()
+        # self.choose_account().click()
         delay(3)
         self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
         delay(4)

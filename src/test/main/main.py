@@ -43,6 +43,6 @@ class TestWebsite:
         self.driver.implicitly_wait(15)
         self.driver.delete_all_cookies()
 
-        self.driver.get(self.url["prod"])
+        self.driver.get(self.url["test"])
 
         yield

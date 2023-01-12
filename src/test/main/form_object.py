@@ -12,7 +12,7 @@ class FormObject(main.TestWebsite):
         return self.driver.find_element(self.by.XPATH, "//input[@id='pd']")
 
     def saldo_sign(self):
-        return self.driver.find_element(self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[11]/div[3]/div/div/div")
+        return self.driver.find_element(self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div/div[1]/div/div/div")
 
     def nik_input(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='idcard']")
