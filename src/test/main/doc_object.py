@@ -44,7 +44,7 @@ class DocObject(main.TestWebsite):
 
     def btn_set_email(self):
         return self.driver.find_element(
-            self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[14]/div/div/div/div/div/div[3]/button")
+            self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[16]/div/div/div/div/div/div[3]/button")
 
     def btn_process_send_doc(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='pros']")
@@ -209,3 +209,23 @@ class DocObject(main.TestWebsite):
 
     def link_home(self):
         return self.driver.find_element(self.by.XPATH, "/html/body/div[1]/div[1]/div[2]/div[3]/div[1]/nav/ul/li[1]/a")
+
+    def dropdown_dokumen(self):
+        return self.driver.find_element(
+            self.by.XPATH, "//a[contains(@href, 'javascript:void(0)')][.//i[@class='ti-write']]")
+
+    def link_draf(self):
+        return self.driver.find_element(
+            self.by.XPATH, "/html/body/div[1]/div[1]/div[2]/div[3]/div[1]/nav/ul/li[2]/ul/li[1]/a")
+
+    def btn_send_row_one_file_draf(self):
+        return self.driver.find_element(
+            self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[12]/div/div/div/div/div/div/div[2]/div[3]/btn[3]")
+
+    def btn_hapus_file_draf(self):
+        return self.driver.find_element(
+            self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[12]/div/div/div/div/div/div/div[2]/div[3]/btn[1]")
+
+    def btn_lihat_file_draf(self):
+        return self.driver.find_element(
+            self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[12]/div/div/div/div/div/div/div[2]/div[3]/btn[2]")

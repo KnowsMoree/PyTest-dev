@@ -139,23 +139,25 @@ class TestSendDocument(FormObject, DocObject):
 
     def test_send_document_full(self, **kwargs):
         iteration = kwargs.get('iteration', 1)
-        self.username().send_keys("wahyuhidy" + self.keys.ENTER)
-        delay(2)
-        self.password().send_keys("Kijang321!" + self.keys.ENTER)
-        delay(4)
-        self.choose_account().click()
+        is_used = kwargs.get('is_used', False)
+        if is_used is False:
+            self.username().send_keys("wahyuhi" + self.keys.ENTER)
+            delay(2)
+            self.password().send_keys("Kijang321!" + self.keys.ENTER)
+            delay(4)
+            self.choose_account().click()
 
         for i in range(iteration):
-            delay(2)
-            self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
-            delay(2)
-            self.doc_submit().click()
+            if is_used is False:
+                delay(2)
+                self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
+                delay(2)
+                self.doc_submit().click()
+                delay(2)
+                # self.check_seal_doc().click()
+                self.name_first_receiver().send_keys("digisign")
+                self.email_first_receiver().send_keys("ditest6@tandatanganku.com")
 
-            delay(2)
-
-            self.check_seal_doc().click()
-            self.name_first_receiver().send_keys("digisign")
-            self.email_first_receiver().send_keys("ditest10@tandatanganku.com")
             self.btn_detail_doc().click()
             delay(2)
             self.btn_add_sign().click()
@@ -168,6 +170,7 @@ class TestSendDocument(FormObject, DocObject):
             delay(5)
 
             self.lock_sign_1().click()
+            delay(1)
             self.btn_set_email().click()
             self.btn_send_doc().click()
             self.btn_process_send_doc().click()
@@ -182,3 +185,33 @@ class TestSendDocument(FormObject, DocObject):
 
     def test_send_doc_with_iterator(self):
         self.test_send_document_full(iteration=2)
+
+    def test_send_doc_on_draft(self, **kwargs):
+        is_next = kwargs.get('is_next', True)
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
+        delay(2)
+        self.password().send_keys("Coba1234" + self.keys.ENTER)
+        delay(2)
+
+        self.dropdown_dokumen().click()
+        self.link_draf().click()
+
+        if is_next is True:
+            self.btn_send_row_one_file_draf().click()
+            self.test_send_document_full(is_used=True)
+
+    def test_open_document_on_draft(self):
+        self.test_send_doc_on_draft(is_next=False)
+
+        self.btn_lihat_file_draf().click()
+        delay(2)
+
+        assert self.canvas() is not None
+
+    def test_delete_document_on_draft(self):
+        self.test_send_doc_on_draft(is_next=False)
+
+        self.btn_hapus_file_draf().click()
+        self.proses_btn().click()
+
+        delay(2)
