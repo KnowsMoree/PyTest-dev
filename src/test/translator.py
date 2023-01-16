@@ -21,3 +21,4 @@ while is_next:
 
     con = input(f"\nLanjut? (y/n): ")
     is_next = True if con == "y" else False
+os.system('clear')

@@ -140,6 +140,9 @@ class TestSendDocument(FormObject, DocObject):
     def test_send_document_full(self, **kwargs):
         iteration = kwargs.get('iteration', 1)
         is_used = kwargs.get('is_used', False)
+        size = kwargs.get('size', [30, 20])
+        pos = kwargs.get('pos', [0, 0])
+
         if is_used is False:
             self.username().send_keys("wahyuhi" + self.keys.ENTER)
             delay(2)
@@ -164,8 +167,8 @@ class TestSendDocument(FormObject, DocObject):
 
             delay(4)
 
-            self.actions.drag_and_drop_by_offset(self.sign_zone_1(), 10, 150).perform()
-            self.actions.drag_and_drop_by_offset(self.resizing_zone_1(), 30, 20).perform()
+            self.actions.drag_and_drop_by_offset(self.sign_zone_1(), pos[0], pos[1]).perform()
+            self.actions.drag_and_drop_by_offset(self.resizing_zone_1(), size[0], size[1]).perform()
 
             delay(5)
 
@@ -176,6 +179,7 @@ class TestSendDocument(FormObject, DocObject):
             self.btn_process_send_doc().click()
             delay(3)
             self.confirm_after_send_doc().click()
+            delay(2)
 
             if i is len(range(iteration)) - 1:
                 pass
@@ -215,3 +219,11 @@ class TestSendDocument(FormObject, DocObject):
         self.proses_btn().click()
 
         delay(2)
+
+
+class TestSendDocumentV38(TestSendDocument):
+    def test_send_document_new(self):
+        self.test_send_document()
+
+    def test_send_document_min_size_sign(self):
+        self.test_send_document_full(size=[-100, -65], pos=[80, 90])
