@@ -14,7 +14,6 @@ class TestSendDocument(FormObject, DocObject):
         self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
         delay(4)
         self.doc_submit().click()
-
         delay(2)
 
     def test_need_check(self, **kwargs):
@@ -157,7 +156,6 @@ class TestSendDocument(FormObject, DocObject):
                 delay(2)
                 self.doc_submit().click()
                 delay(2)
-                # self.check_seal_doc().click()
                 self.name_first_receiver().send_keys("digisign")
                 self.email_first_receiver().send_keys("ditest6@tandatanganku.com")
 
@@ -188,7 +186,7 @@ class TestSendDocument(FormObject, DocObject):
                 self.link_home().click()
 
     def test_send_doc_with_iterator(self):
-        self.test_send_document_full(iteration=2)
+        self.test_send_document_full(iteration=3)
 
     def test_send_doc_on_draft(self, **kwargs):
         is_next = kwargs.get('is_next', True)
