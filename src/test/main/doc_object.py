@@ -199,7 +199,7 @@ class DocObject(main.TestWebsite):
         return self.driver.find_element(self.by.XPATH, "//*[@id='e_name-1']")
 
     def button_paraf(self):
-        return self.driver.find_element(self.by.XPATH, "//button[@onclick='add_init()']")
+        return self.driver.find_element(self.by.XPATH, "//button[contains(@onclick, 'adds_init()')]")
 
     def paraf_box(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='imginit-1']")
@@ -229,3 +229,15 @@ class DocObject(main.TestWebsite):
     def btn_lihat_file_draf(self):
         return self.driver.find_element(
             self.by.XPATH, "/html/body/div[1]/div[2]/div[2]/div[12]/div/div/div/div/div/div/div[2]/div[3]/btn[2]")
+
+    def sign_null(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='swal2-content']")
+
+    def select_email_seal(self):
+        return self.driver.find_element(self.by.XPATH, "//select[@id='seal']")
+
+    def imgsealer(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='imgsealer']")
+
+    def button_lockseal(self):
+        return self.driver.find_element(self.by.XPATH, "//*[@id='lockseal']")
