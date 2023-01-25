@@ -1,3 +1,5 @@
+from typing import Union
+
 from selenium.webdriver.support.select import Select
 
 from main import delay, DocObject, FormObject
@@ -19,7 +21,7 @@ class TestSendDocument(FormObject, DocObject):
             self.password().send_keys("Kijang321!" + self.keys.ENTER)
             delay(4)
             self.choose_account().click()
-            
+
         delay(3)
         if is_pdf == "pdf":
             self.doc_file().send_keys("C:\\Users\\dignitas\\PycharmProjects\\tandatanganku\\src\\file\\report.pdf")
@@ -79,12 +81,16 @@ class TestSendDocument(FormObject, DocObject):
 
     def test_nothing_to_sign(self, **kwargs):
         is_next = kwargs.get('is_next', True)
+        is_not_locked = kwargs.get('is_not_locked', False)
         self.test_send_document()
 
         self.button_add_me().click()
         self.btn_detail_doc().click()
 
         if is_next is True:
+            if is_not_locked is True:
+                self.btn_add_sign().click()
+
             self.btn_send_doc().click()
             delay(1)
             self.btn_process_send_doc().click()
@@ -190,10 +196,11 @@ class TestSendDocument(FormObject, DocObject):
 
             delay(2)
 
-    def test_send_document_full(self, **kwargs):
+    def test_send_document_full(self, **kwargs: Union[int, bool, list[int]]):
         iteration = kwargs.get('iteration', 1)
-        is_used = kwargs.get('is_used', False)
-        size = kwargs.get('size', [30, 20])
+        is_not_seal = kwargs.get('is_not_seal', True)
+        is_used = kwargs.get('is_draft', False)
+        size = kwargs.get('size', [0, 0])
         pos = kwargs.get('pos', [0, 0])
 
         if is_used is False:
@@ -206,10 +213,14 @@ class TestSendDocument(FormObject, DocObject):
         for i in range(iteration):
             if is_used is False:
                 delay(2)
-                self.doc_file().send_keys("C:\\Users\\dignitas\\Downloads\\company_image_20221101065745 (1) (1).pdf")
+                self.doc_file().send_keys("C:\\Users\\dignitas\\PycharmProjects\\tandatanganku\\src\\file\\report.pdf")
                 delay(2)
                 self.doc_submit().click()
                 delay(2)
+
+                if is_not_seal is True:
+                    self.check_seal_doc().click()
+
                 self.name_first_receiver().send_keys("digisign")
                 self.email_first_receiver().send_keys("ditest6@tandatanganku.com")
 
@@ -254,7 +265,7 @@ class TestSendDocument(FormObject, DocObject):
 
         if is_next is True:
             self.btn_send_row_one_file_draf().click()
-            self.test_send_document_full(is_used=True)
+            self.test_send_document_full(is_draft=True)
 
     def test_open_document_on_draft(self):
         self.test_send_doc_on_draft(is_next=False)

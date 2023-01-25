@@ -241,3 +241,11 @@ class DocObject(main.TestWebsite):
 
     def button_lockseal(self):
         return self.driver.find_element(self.by.XPATH, "//*[@id='lockseal']")
+
+    def kotak_masuk_terakhir(self):
+        return self.driver.find_element(self.by.XPATH, "//div[@data-target='#demo1']")
+
+    def tanggal_kotak_masuk(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[3]/div/div/div/div/table/tbody/tr[1]/td")
