@@ -1,9 +1,9 @@
 from selenium.webdriver.support.ui import Select
-from main import DocObject, FormObject, delay, MailObject
+from main import DocObject, FormObject, delay
 import time
 
 
-class TestDocProd(DocObject, FormObject, MailObject):
+class TestDocProd(DocObject, FormObject):
     def test_need_sign(self):
         self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
         self.password().send_keys("Coba1234" + self.keys.ENTER)

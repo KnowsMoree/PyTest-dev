@@ -264,7 +264,7 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
             print(e)
 
 
-class TestProcessSignDoc(TestDocProd):
+class TestProcessSignDoc(TestDocProd, MailObject):
     def test_web3_1(self):
         self.test_direct_doc()
 
