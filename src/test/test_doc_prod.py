@@ -1,9 +1,9 @@
 from selenium.webdriver.support.ui import Select
-from main import DocObject, FormObject, delay
+from main import DocObject, FormObject, delay, MailObject
 import time
 
 
-class TestDocProd(DocObject, FormObject):
+class TestDocProd(DocObject, FormObject, MailObject):
     def test_need_sign(self):
         self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
         self.password().send_keys("Coba1234" + self.keys.ENTER)
@@ -48,8 +48,9 @@ class TestDocProd(DocObject, FormObject):
         self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         self.password().send_keys("Coba1234", self.keys.ENTER)
         delay(2)
+        self.need_sign().click()
         first = time.time()
-        self.link_tooltip1().click()
+        self.latest_inbox().click()
         last = time.time() - first
         delay(4)
         print(f"\ntime to open doc {time.strftime('%H:%M:%S', time.gmtime(last))}")
@@ -77,21 +78,26 @@ class TestDocProd(DocObject, FormObject):
         self.btn_otp_sms().click()
         delay(3)
 
-    def test_otp_email_process(self):
+    def test_otp_email_process(self, **kwargs):
+        is_no_req = kwargs.get("is_no_req", False)
         self.test_continue_direct_doc()
-        self.btn_otp_email().click()
-        delay(3)
+        if is_no_req is False:
+            self.btn_otp_email().click()
+        else:
+            delay(3)
 
-    def test_otp_false(self):
-        self.test_otp_email_process()
-        self.otp_input_number().send_keys("002383")
+    def test_otp_false(self, **kwargs):
+        otp = kwargs.get('otp_code', "002383")
+        otpless = kwargs.get('otpless', False)
+        self.test_otp_email_process(is_no_req=otpless)
+        self.otp_input_number().send_keys(otp)
         delay(3)
 
         self.btn_prosign().click()
         self.btn_saya_yakin().click()
         delay(3)
 
-        assert self.title_verify_false() is not None
+        assert self.swal_otp_none() is not None
         self.btn_swal_ok().click()
         delay(2)
 

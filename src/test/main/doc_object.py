@@ -255,3 +255,58 @@ class DocObject(main.TestWebsite):
             self.by.XPATH,
             "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[2]/div[3]/div/span"
         )
+
+    def link_terkirim(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[1]/div[2]/div[3]/div[1]/nav/ul/li[2]/ul/li[2]/a")
+
+    def btn_eye(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[12]/div/div/div/div/div/div/div[2]/div[4]/ul/li[2]/a/i")
+
+    def swal_otp_none(self):
+        return self.driver.find_element(self.by.XPATH, "//div[contains(@class, 'swal-text')]")
+
+    def second_tandatangan(self):
+        return self.driver.find_element\
+            (self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[4]/div[3]/div/span")
+
+    def third_tandatangan(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[6]/div[3]/div/span")
+
+    def fourth_tandatangan(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[10]/div[3]/div/span")
+
+    def latest_inbox(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[12]/div/div[3]/div/div/div/div[2]/div[3]/div/span")
+
+    def latest_inbox2(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[12]/div/div[3]/div/div/div/div[4]/div[3]/div/span")
+
+    def latest_inbox3(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[12]/div/div[3]/div/div/div/div[6]/div[3]/div/span")
+
+    def latest_inbox4(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[12]/div/div[3]/div/div/div/div[8]/div[3]/div/span")
+
+    def latest_inbox5(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[12]/div/div[3]/div/div/div/div[10]/div[3]/div/span")
+
+

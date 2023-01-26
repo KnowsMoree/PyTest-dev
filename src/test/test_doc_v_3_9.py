@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 from selenium.webdriver.support.select import Select
 from main import delay, MailObject
 from test_send_doc import TestSendDocument
+from test_doc_prod import TestDocProd
 
 
 class TestUpload(TestSendDocument):
@@ -191,8 +192,6 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
 
         delay(2)
 
-    class_variable_date = None
-
     def test_web2_10(self):
         self.test_send_document_full()
 
@@ -201,7 +200,7 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
 
     def test_web2_11(self):
         self.test_send_document_full()
-        self.class_variable_date = datetime.now()
+        self.date_after_test = datetime.now()
 
         self.driver.execute_script("window.open('about:blank','tab2')")
         self.driver.switch_to.window(self.driver.window_handles[1])
@@ -221,7 +220,7 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
         cvrt_date_received = datetime.strptime(date_received, "%B %d, %Y %I:%M %p")
 
         try:
-            if cvrt_date_received <= self.class_variable_date:
+            if cvrt_date_received <= self.date_after_test:
                 print("\nTime send documents is below than email received")
             else:
                 raise Exception("\nThe message date is not more than now")
@@ -238,8 +237,6 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
 
         self.kotak_masuk_terakhir().click()
         tanggal_masuk = self.tanggal_kotak_masuk().text.split("\n")[1]
-        date_time_obj = None
-        yesterday = None
 
         print(tanggal_masuk, "tanggal_masuk")
 
@@ -248,7 +245,7 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
             yesterday = datetime.now() - timedelta(days=1)
 
             if datetime.now() >= date_time_obj > yesterday:
-                pass
+                delay(2)
             else:
                 raise Exception("This not newest doc")
         else:
@@ -265,3 +262,122 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
             assert self.canvas() is not None
         except Exception as e:
             print(e)
+
+
+class TestProcessSignDoc(TestDocProd):
+    def test_web3_1(self):
+        self.test_direct_doc()
+
+    def test_web3_2(self):
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
+        self.password().send_keys("Coba1234", self.keys.ENTER)
+        delay(2)
+
+        self.dropdown_dokumen().click()
+        self.link_terkirim().click()
+
+        self.btn_eye().click()
+        delay(2)
+
+        try:
+            assert self.canvas() is not None
+        except Exception as e:
+            raise e
+
+    def test_web3_3(self):
+        self.test_denial_process()
+
+    def test_web3_4(self):
+        self.test_otp_false(otp_code="", otpless=True)
+
+    def test_web3_5(self):
+        self.test_otp_false()
+
+    def test_web3_6(self):
+        """semi-automation because its receive and send otp Email"""
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
+        self.password().send_keys("Coba1234" + self.keys.ENTER)
+        self.need_sign().click()
+        self.latest_inbox().click()
+
+        self.button_proses_sign_one().click()
+        self.btn_otp_email().click()
+
+        delay(25)
+
+        self.btn_prosign().click()
+        self.btn_saya_yakin().click()
+        delay(7)
+
+    def test_web3_7(self):
+        """semi-automation because its receive and send otp SMS"""
+        self.username().send_keys("wahyuhi" + self.keys.ENTER)
+        self.password().send_keys("Kijang321!" + self.keys.ENTER)
+        self.choose_account().click()
+        self.need_sign().click()
+
+        self.latest_inbox().click()
+
+        self.button_proses_sign_one().click()
+        self.btn_otp_sms().click()
+
+        delay(25)
+
+        self.btn_prosign().click()
+        self.btn_saya_yakin().click()
+        delay(7)
+
+    def test_web3_8(self):
+        """semi-automation because its receive and send otp"""
+        self.test_denial_process()
+
+        self.text_area_reason().send_keys("testing")
+        self.btn_otp_email().click()
+
+        delay(25)
+
+        self.btn_prosign().click()
+        self.btn_saya_yakin().click()
+        delay(7)
+
+    def test_web3_9(self):
+        self.test_agreement_process()
+
+        self.btn_otp_email().click()
+
+        delay(25)
+
+        self.btn_prosign().click()
+        self.btn_saya_yakin().click()
+        delay(7)
+
+    def test_web3_10(self):
+        self.test_web3_9()
+        self.time_test = datetime.now()
+
+        self.driver.execute_script("window.open('about:blank','tab2')")
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.driver.get("https://mail.tandatanganku.com")
+
+        self.input_username().send_keys("ditest6@tandatanganku.com")
+        self.input_password().send_keys("ditest123" + self.keys.ENTER)
+        delay(5)
+
+        for i in range(10):
+            self.refresh().click()
+            delay(1.5)
+
+        self.actions.double_click(self.msg_list_1()).perform()
+
+        date_received = self.date_get().text
+        cvrt_date_received = datetime.strptime(date_received, "%B %d, %Y %I:%M %p")
+
+        try:
+            if cvrt_date_received <= self.time_test:
+                print("\nTime send documents is below than email received")
+            else:
+                raise Exception("\nThe message date is not more than now")
+        except Exception as e:
+            print(e)
+
+        delay(2)
