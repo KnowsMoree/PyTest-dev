@@ -248,4 +248,10 @@ class DocObject(main.TestWebsite):
     def tanggal_kotak_masuk(self):
         return self.driver.find_element(
             self.by.XPATH,
-            "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[3]/div/div/div/div/table/tbody/tr[1]/td")
+            "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[2]/div[3]/div")
+
+    def latest_tandatangan(self):
+        return self.driver.find_element(
+            self.by.XPATH,
+            "/html/body/div[1]/div[2]/div[2]/div[11]/div[6]/div/div/div[1]/div/div/div/div[2]/div[3]/div/span"
+        )

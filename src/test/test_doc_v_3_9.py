@@ -1,3 +1,4 @@
+import re
 from datetime import datetime, timedelta
 
 from selenium.webdriver.support.select import Select
@@ -229,27 +230,38 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
 
         delay(2)
 
-    # def test_web2_12(self):
-    #     self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
-    #     delay(2)
-    #     self.password().send_keys("Coba1234" + self.keys.ENTER)
-    #     delay(4)
-    #
-    #     self.kotak_masuk_terakhir().click()
-    #     tanggal_masuk = self.tanggal_kotak_masuk().text
-    #     print(tanggal_masuk)
-    #     # date_time_obj = datetime.strptime(tanggal_masuk, "%d %b %Y %H:%M")
-    #
-    #     # yesterday = datetime.now() - timedelta(days=1)
-    #     #
-    #     # if datetime.now() >= date_time_obj > yesterday:
-    #     #     pass
-    #     # else:
-    #     #     raise Exception("This not newest doc")
-    #
-    #     self.link_tooltip1().click()
-    #
-    #     try:
-    #         assert self.canvas() is not None
-    #     except Exception as e:
-    #         print(e)
+    def test_web2_12(self):
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
+        delay(2)
+        self.password().send_keys("Coba1234" + self.keys.ENTER)
+        delay(4)
+
+        self.kotak_masuk_terakhir().click()
+        tanggal_masuk = self.tanggal_kotak_masuk().text.split("\n")[1]
+        date_time_obj = None
+        yesterday = None
+
+        print(tanggal_masuk, "tanggal_masuk")
+
+        if bool(re.search('[a-zA-Z]', tanggal_masuk)) is True:
+            date_time_obj = datetime.strptime(tanggal_masuk, "%d %b")
+            yesterday = datetime.now() - timedelta(days=1)
+
+            if datetime.now() >= date_time_obj > yesterday:
+                pass
+            else:
+                raise Exception("This not newest doc")
+        else:
+            date_time_obj = datetime.strptime(tanggal_masuk, "%H:%M").time()
+
+            if datetime.now().time() >= date_time_obj:
+                delay(2)
+            else:
+                raise Exception("This not newest doc")
+
+        self.latest_tandatangan().click()
+
+        try:
+            assert self.canvas() is not None
+        except Exception as e:
+            print(e)
