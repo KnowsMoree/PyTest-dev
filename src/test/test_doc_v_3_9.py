@@ -89,8 +89,9 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
     def test_web2_3_2(self):
         self.test_check_is_the_last()
 
-    def test_web2_3_3(self):
-        self.test_need_check()
+    def test_web2_3_3(self, **kwargs):
+        seal = kwargs.get('seal', False)
+        self.test_need_check(seal=seal)
 
     def test_web2_3_4(self):
         self.test_need_paraf(full=False)
@@ -109,7 +110,7 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
         delay(5)
 
     def test_web2_4_2(self):
-        self.test_need_paraf()
+        self.test_need_paraf(corp=True)
 
     def test_web2_5_1(self):
         self.test_send_document(seal=True)
@@ -357,6 +358,365 @@ class TestProcessSignDoc(TestDocProd, MailObject):
 
         self.driver.execute_script("window.open('about:blank','tab2')")
         self.driver.switch_to.window(self.driver.window_handles[1])
+        self.driver.get("https://mail.tandatanganku.com")
+
+        self.input_username().send_keys("ditest6@tandatanganku.com")
+        self.input_password().send_keys("ditest123" + self.keys.ENTER)
+        delay(5)
+
+        for i in range(10):
+            self.refresh().click()
+            delay(1.5)
+
+        self.actions.double_click(self.msg_list_1()).perform()
+
+        date_received = self.date_get().text
+        cvrt_date_received = datetime.strptime(date_received, "%B %d, %Y %I:%M %p")
+
+        try:
+            if cvrt_date_received <= self.time_test:
+                print("\nTime send documents is below than email received")
+            else:
+                raise Exception("\nThe message date is not more than now")
+        except Exception as e:
+            print(e)
+
+        delay(2)
+
+
+class TestProcessParafDoc(TestProcessSendDoc):
+    def test_web4_1(self):
+        self.test_need_paraf(corp=True)
+
+        self.driver.execute_script("window.open('about:blank','tab2')")
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.driver.get("https://app.tandatanganku.com")
+
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
+        self.password().send_keys("Coba1234" + self.keys.ENTER)
+
+        self.need_sign().click()
+        self.latest_inbox().click()
+
+        try:
+            assert self.canvas() is not None
+        except Exception as e:
+            raise e
+
+    def test_web4_2(self, **kwargs):
+        otp = kwargs.get('otp_code', "002383")
+        otp_type = kwargs.get('otp_type', "email")
+        semi_automation = kwargs.get('semi_automation', False)
+
+        if otp_type is "email":
+            self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
+            self.password().send_keys("Coba1234", self.keys.ENTER)
+            delay(2)
+        elif otp_type is "sms":
+            self.username().send_keys("wahyuhi" + self.keys.ENTER)
+            self.password().send_keys("Kijang321!" + self.keys.ENTER)
+            self.choose_account().click()
+            delay(2)
+
+        self.need_sign().click()
+        self.latest_inbox().click()
+        delay(4)
+
+        self.button_proses_sign_one().click()
+        delay(2)
+
+        if otp_type == "email":
+            self.btn_otp_email().click()
+            if semi_automation is False:
+                self.otp_input_number().send_keys(otp)
+                delay(10)
+            else:
+                delay(20)
+        elif otp_type == "sms":
+            self.btn_otp_sms().click()
+            if semi_automation is False:
+                self.otp_input_number().send_keys(otp)
+                delay(10)
+            else:
+                delay(20)
+
+        self.btn_prosign().click()
+        self.btn_saya_yakin().click()
+
+        delay(15)
+
+        if semi_automation is False:
+            try:
+                assert self.swal_otp_none() is not None
+            except Exception as e:
+                raise e
+
+    def test_web4_3(self):
+        self.test_web4_2(semi_automation=True)
+
+    def test_web4_4(self):
+        self.test_web4_2(semi_automation=True, otp_type="sms")
+
+    def test_web4_5(self, **kwargs):
+        is_used = kwargs.get('used', False)
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
+        self.password().send_keys("Coba1234", self.keys.ENTER)
+        delay(2)
+
+        self.need_sign().click()
+        self.latest_inbox().click()
+
+        self.button_proses_sign_one().click()
+        delay(2)
+
+        if is_used is False:
+            self.label_tidak().click()
+            delay(3)
+            self.text_area_reason().send_keys("testing")
+
+        self.btn_otp_email().click()
+
+        delay(20)
+
+        self.btn_prosign().click()
+        delay(2)
+
+        self.btn_saya_yakin().click()
+        delay(10)
+
+    def test_web4_6(self):
+        self.test_web4_5(used=True)
+
+    def test_web4_7(self):
+        self.test_web4_6()
+        self.time_test = datetime.now()
+
+        self.driver.execute_script("window.open('about:blank','tab2')")
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.driver.get("https://mail.tandatanganku.com")
+
+        self.input_username().send_keys("ditest6@tandatanganku.com")
+        self.input_password().send_keys("ditest123" + self.keys.ENTER)
+        delay(5)
+
+        for i in range(10):
+            self.refresh().click()
+            delay(1.5)
+
+        self.actions.double_click(self.msg_list_1()).perform()
+
+        date_received = self.date_get().text
+        cvrt_date_received = datetime.strptime(date_received, "%B %d, %Y %I:%M %p")
+
+        try:
+            if cvrt_date_received <= self.time_test:
+                print("\nTime send documents is below than email received")
+            else:
+                raise Exception("\nThe message date is not more than now")
+        except Exception as e:
+            print(e)
+
+        delay(2)
+
+
+class TestProcessCheckDoc(TestProcessParafDoc):
+    """all of this is semi-automation test because its receive an OTP"""
+    def test_web5_1(self, **kwargs):
+        is_used = kwargs.get('used', False)
+
+        if is_used is False:
+            self.username().send_keys("wahyuhi" + self.keys.ENTER)
+            self.password().send_keys("Kijang321!" + self.keys.ENTER)
+            self.choose_account().click()
+
+        delay(2)
+
+        self.need_sign().click()
+        self.latest_inbox().click()
+
+    def test_web5_2(self):
+        self.test_web5_1()
+
+        self.button_proses_sign_one().click()
+        delay(2)
+        self.btn_otp_email().click()
+        self.otp_input_number().send_keys("002383")
+
+        self.btn_prosign().click()
+        self.btn_saya_yakin().click()
+
+        try:
+            assert self.swal_otp_none() is not None
+        except Exception as e:
+            raise e
+
+        delay(10)
+
+    def test_web5_3(self, **kwargs):
+        otp = kwargs.get("otp", "email")
+        is_used = kwargs.get('used', False)
+        denial = kwargs.get('denial', False)
+        self.test_web5_1(used=is_used)
+
+        self.button_proses_sign_one().click()
+        delay(2)
+
+        if denial is True:
+            self.label_tidak().click()
+            delay(3)
+            self.text_area_reason().send_keys("testing")
+
+        if otp is "email":
+            self.btn_otp_email().click()
+        else:
+            self.btn_otp_sms().click()
+
+        delay(20)
+
+        self.btn_prosign().click()
+        self.btn_saya_yakin().click()
+
+        delay(15)
+
+    def test_web5_4(self, **kwargs):
+        denial = kwargs.get('denial', False)
+        self.test_web2_3_3(seal=True)
+        self.btn_add_sign().click()
+
+        self.lock_sign_1().click()
+        self.btn_set_email().click()
+
+        self.btn_send_doc().click()
+        self.btn_process_send_doc().click()
+        delay(3)
+        self.confirm_after_send_doc().click()
+        delay(2)
+
+        self.driver.execute_script("window.open('about:blank','tab2')")
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.driver.get("https://app.tandatanganku.com")
+
+        self.test_web5_3(otp="sms", used=True, denial=denial)
+
+    def test_web5_5(self):
+        self.test_web5_4(denial=True)
+
+    def test_web5_6(self):
+        self.test_web5_4(denial=False)
+
+    def test_web5_7(self):
+        self.test_web5_6()
+        self.time_test = datetime.now()
+
+        self.driver.execute_script("window.open('about:blank','tab3')")
+        self.driver.switch_to.window(self.driver.window_handles[2])
+        self.driver.get("https://mail.tandatanganku.com")
+
+        self.input_username().send_keys("ditest6@tandatanganku.com")
+        self.input_password().send_keys("ditest123" + self.keys.ENTER)
+        delay(5)
+
+        for i in range(10):
+            self.refresh().click()
+            delay(1.5)
+
+        self.actions.double_click(self.msg_list_1()).perform()
+
+        date_received = self.date_get().text
+        cvrt_date_received = datetime.strptime(date_received, "%B %d, %Y %I:%M %p")
+
+        try:
+            if cvrt_date_received <= self.time_test:
+                print("\nTime send documents is below than email received")
+            else:
+                raise Exception("\nThe message date is not more than now")
+        except Exception as e:
+            print(e)
+
+        delay(2)
+
+
+class TestProcessSealDoc(TestProcessCheckDoc):
+    """all of this is semi-automation test because its receive an OTP"""
+    def test_web6_1(self):
+        self.test_web2_5_3()
+
+        self.driver.execute_script("window.open('about:blank','tab2')")
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.driver.get("https://app.tandatanganku.com")
+
+        self.need_sign().click()
+        self.latest_inbox().click()
+
+        try:
+            assert self.canvas() is not None
+        except Exception as e:
+            raise e
+
+        delay(2)
+
+    def test_web6_2(self, **kwargs):
+        auto = kwargs.get('auto', True)
+        used = kwargs.get('used', False)
+        denial = kwargs.get('denial', False)
+        otp_type = kwargs.get('otp_type', 'email')
+        self.username().send_keys("wahyuhi" + self.keys.ENTER)
+        self.password().send_keys("Kijang321!" + self.keys.ENTER)
+        self.choose_account().click()
+
+        delay(3)
+
+        self.need_sign().click()
+        self.latest_inbox().click()
+
+        self.button_proses_sign_one().click()
+        delay(2)
+
+        if denial is True:
+            self.label_tidak().click()
+            delay(3)
+            self.text_area_reason().send_keys("testing")
+
+        if otp_type is "email":
+            self.btn_otp_email().click()
+        elif otp_type is "sms":
+            self.btn_otp_sms().click()
+
+        if auto is True:
+            self.otp_input_number().send_keys("002383")
+        else:
+            delay(25)
+
+        self.btn_prosign().click()
+        self.btn_saya_yakin().click()
+
+        if used is False:
+            try:
+                assert self.swal_otp_none() is not None
+            except Exception as e:
+                raise e
+
+        delay(10)
+
+    def test_web6_3(self):
+        """I don't know its can run or not because app.tandatanganku.com is cannot send OTP to digi-id email"""
+        self.test_web6_2(auto=False, used=True)
+
+    def test_web6_4(self):
+        self.test_web6_2(auto=False, otp_type="sms", used=True)
+
+    def test_web6_5(self):
+        self.test_web6_2(auto=False, denial=True, otp_type="sms", used=True)
+
+    def test_web6_6(self):
+        self.test_web6_2(auto=False, denial=False, otp_type="sms", used=True)
+
+    def test_web6_7(self):
+        self.test_web6_6()
+        self.time_test = datetime.now()
+
+        self.driver.execute_script("window.open('about:blank','tab3')")
+        self.driver.switch_to.window(self.driver.window_handles[2])
         self.driver.get("https://mail.tandatanganku.com")
 
         self.input_username().send_keys("ditest6@tandatanganku.com")

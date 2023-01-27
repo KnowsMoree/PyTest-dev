@@ -33,7 +33,8 @@ class TestSendDocument(FormObject, DocObject):
 
     def test_need_check(self, **kwargs):
         select = kwargs.get('select', "Dibutuhkan Tandatangan")
-        self.test_send_document()
+        seal = kwargs.get('seal', False)
+        self.test_send_document(seal=seal)
 
         self.button_add_me().click()
         self.label_sort_sign().click()
@@ -167,9 +168,11 @@ class TestSendDocument(FormObject, DocObject):
 
     def test_need_paraf(self, **kwargs):
         is_full = kwargs.get('full', True)
-        self.test_send_document()
+        is_corp = kwargs.get('corp', False)
+        self.test_send_document(seal=is_corp)
 
-        self.button_add_me().click()
+        self.email_first_receiver().send_keys("ditest6@tandatanganku.com")
+        self.name_first_receiver().send_keys("digi")
         Select(self.select_action_need()).select_by_visible_text("Dibutuhkan Paraf")
 
         self.btn_detail_doc().click()

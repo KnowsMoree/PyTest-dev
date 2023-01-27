@@ -127,7 +127,7 @@ class DocObject(main.TestWebsite):
         return self.driver.find_element(self.by.XPATH, "//*[text() = 'Kode verifikasi salah']")
 
     def btn_saya_yakin(self):
-        return self.driver.find_element(self.by.XPATH, "//button[contains(@class, 'swal-button--confirm')]")
+        return self.driver.find_element(self.by.XPATH, "//button[contains(@class, 'confirm')]")
 
     def verify_false(self):
         return self.driver.find_element(self.by.XPATH, "//*[text() = 'Kode verifikasi salah']")
