@@ -337,6 +337,7 @@ class TestNewScript(TestDocProd, MailObject):
         delay(7)
 
     def test_web3_9(self):
+        """semi-automation because its receive and send otp"""
         self.test_agreement_process()
 
         self.btn_otp_email().click()
@@ -348,6 +349,7 @@ class TestNewScript(TestDocProd, MailObject):
         delay(7)
 
     def test_web3_10(self):
+        """semi-automation because its receive and send otp"""
         self.test_web3_9()
         self.time_test = datetime.now()
 
@@ -445,12 +447,15 @@ class TestNewScript(TestDocProd, MailObject):
                 raise e
 
     def test_web4_3(self):
+        """semi-automation because its receive and send otp"""
         self.test_web4_2(semi_automation=True)
 
     def test_web4_4(self):
+        """semi-automation because its receive and send otp"""
         self.test_web4_2(semi_automation=True, otp_type="sms")
 
     def test_web4_5(self, **kwargs):
+        """semi-automation because its receive and send otp"""
         is_used = kwargs.get('used', False)
         self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         self.password().send_keys("Coba1234", self.keys.ENTER)
@@ -478,9 +483,11 @@ class TestNewScript(TestDocProd, MailObject):
         delay(10)
 
     def test_web4_6(self):
+        """semi-automation because its receive and send otp"""
         self.test_web4_5(used=True)
 
     def test_web4_7(self):
+        """semi-automation because its receive and send otp"""
         self.test_web4_6()
         self.time_test = datetime.now()
 
@@ -511,8 +518,8 @@ class TestNewScript(TestDocProd, MailObject):
 
         delay(2)
 
-    """all of this is semi-automation test because its receive an OTP"""
     def test_web5_1(self, **kwargs):
+        """all of this is semi-automation test because its receive an OTP"""
         is_used = kwargs.get('used', False)
 
         if is_used is False:
@@ -544,6 +551,7 @@ class TestNewScript(TestDocProd, MailObject):
         delay(10)
 
     def test_web5_3(self, **kwargs):
+        """semi-automation because its receive and send otp"""
         otp = kwargs.get("otp", "email")
         is_used = kwargs.get('used', False)
         denial = kwargs.get('denial', False)
@@ -570,6 +578,7 @@ class TestNewScript(TestDocProd, MailObject):
         delay(15)
 
     def test_web5_4(self, **kwargs):
+        """semi-automation because its receive and send otp"""
         denial = kwargs.get('denial', False)
         self.test_web2_3_3(seal=True)
         self.btn_add_sign().click()
@@ -590,12 +599,15 @@ class TestNewScript(TestDocProd, MailObject):
         self.test_web5_3(otp="sms", used=True, denial=denial)
 
     def test_web5_5(self):
+        """semi-automation because its receive and send otp"""
         self.test_web5_4(denial=True)
 
     def test_web5_6(self):
+        """semi-automation because its receive and send otp"""
         self.test_web5_4(denial=False)
 
     def test_web5_7(self):
+        """semi-automation because its receive and send otp"""
         self.test_web5_6()
         self.time_test = datetime.now()
 
@@ -626,8 +638,8 @@ class TestNewScript(TestDocProd, MailObject):
 
         delay(2)
 
-    """all of this is semi-automation test because its receive an OTP"""
     def test_web6_1(self):
+        """all of this is semi-automation test because its receive an OTP"""
         self.test_web2_5_3()
 
         self.driver.execute_script("window.open('about:blank','tab2')")
@@ -692,15 +704,19 @@ class TestNewScript(TestDocProd, MailObject):
         self.test_web6_2(auto=False, used=True)
 
     def test_web6_4(self):
+        """semi-automation because its receive and send otp"""
         self.test_web6_2(auto=False, otp_type="sms", used=True)
 
     def test_web6_5(self):
+        """semi-automation because its receive and send otp"""
         self.test_web6_2(auto=False, denial=True, otp_type="sms", used=True)
 
     def test_web6_6(self):
+        """semi-automation because its receive and send otp"""
         self.test_web6_2(auto=False, denial=False, otp_type="sms", used=True)
 
     def test_web6_7(self):
+        """semi-automation because its receive and send otp"""
         self.test_web6_6()
         self.time_test = datetime.now()
 
