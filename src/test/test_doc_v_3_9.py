@@ -3,19 +3,16 @@ from datetime import datetime, timedelta
 
 from selenium.webdriver.support.select import Select
 from main import delay, MailObject
-from test_send_doc import TestSendDocument
 from test_doc_prod import TestDocProd
 
 
-class TestUpload(TestSendDocument):
+class TestNewScript(TestDocProd, MailObject):
     def test_web1_1(self):
         self.test_send_document()
 
     def test_web1_2(self):
         self.test_send_document(exe='img')
 
-
-class TestProcessSendDoc(TestSendDocument, MailObject):
     def test_web2_1_1(self):
         self.test_nothing_to_sign(is_next=False)
 
@@ -264,8 +261,6 @@ class TestProcessSendDoc(TestSendDocument, MailObject):
         except Exception as e:
             print(e)
 
-
-class TestProcessSignDoc(TestDocProd, MailObject):
     def test_web3_1(self):
         self.test_direct_doc()
 
@@ -383,8 +378,6 @@ class TestProcessSignDoc(TestDocProd, MailObject):
 
         delay(2)
 
-
-class TestProcessParafDoc(TestProcessSendDoc):
     def test_web4_1(self):
         self.test_need_paraf(corp=True)
 
@@ -518,8 +511,6 @@ class TestProcessParafDoc(TestProcessSendDoc):
 
         delay(2)
 
-
-class TestProcessCheckDoc(TestProcessParafDoc):
     """all of this is semi-automation test because its receive an OTP"""
     def test_web5_1(self, **kwargs):
         is_used = kwargs.get('used', False)
@@ -635,8 +626,6 @@ class TestProcessCheckDoc(TestProcessParafDoc):
 
         delay(2)
 
-
-class TestProcessSealDoc(TestProcessCheckDoc):
     """all of this is semi-automation test because its receive an OTP"""
     def test_web6_1(self):
         self.test_web2_5_3()
