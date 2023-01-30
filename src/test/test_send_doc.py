@@ -134,7 +134,7 @@ class TestSendDocument(FormObject, DocObject):
         self.button_add_receiver().click()
 
         self.input_name_receiver_2().send_keys("wahyu")
-        self.input_email_receiver_2().send_keys("ditest10@tandatanganku.com")
+        self.input_email_receiver_2().send_keys("ditest6@tandatanganku.com")
 
         self.btn_detail_doc().click()
         delay(2)
@@ -268,6 +268,8 @@ class TestSendDocument(FormObject, DocObject):
 
         if is_next is True:
             self.btn_send_row_one_file_draf().click()
+            delay(3)
+            self.button_add_me().click()
             self.test_send_document_full(is_draft=True)
 
     def test_open_document_on_draft(self):

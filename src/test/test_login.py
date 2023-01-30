@@ -15,7 +15,7 @@ class TestLogin(FormObject):
         print(f"\ntime to login {time.strftime('%H:%M:%S', time.gmtime(last))}")
 
     def test_password_false(self):
-        self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         delay(2)
         self.password().send_keys("kijang" + self.keys.ENTER)
         delay(5)
@@ -39,7 +39,7 @@ class TestLogin(FormObject):
 
     def test_block_password(self):
         for i in range(4):
-            self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+            self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
             delay(1)
             self.password().send_keys("testing6" + self.keys.ENTER)
             delay(2)

@@ -3,7 +3,7 @@ import main
 
 class TestDoc(main.TestWebsite):
     # def test_upload_doc_with_click(self):
-    #     self.reg_and_log_object("uname").send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+    #     self.reg_and_log_object("uname").send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
     #     self.reg_and_log_object("password").send_keys("Coba1234" + self.keys.ENTER)
     #     main.delay(2)
     #     self.reg_and_log_object("btn_input_file").click()
@@ -14,7 +14,7 @@ class TestDoc(main.TestWebsite):
     #     main.delay(4)
 
     def test_pertama(self):
-        self.reg_and_log_object("uname").send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.reg_and_log_object("uname").send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         self.reg_and_log_object("password").send_keys("Coba1234")
         self.reg_and_log_object("password_submit").click()
         main.delay(2)
@@ -34,7 +34,7 @@ class TestDoc(main.TestWebsite):
         main.delay(5)
 
     def test_kotak_masuk(self):
-        self.reg_and_log_object("uname").send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.reg_and_log_object("uname").send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         self.reg_and_log_object("password").send_keys("Coba1234" + self.keys.ENTER)
         main.delay(2)
         self.document_object("nav_inbox").click()

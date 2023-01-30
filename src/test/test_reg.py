@@ -150,7 +150,7 @@ class TestReg(FormObject):
         assert self.validation_email() is not None
 
     def test_email_taken(self, **kwargs):
-        email = kwargs.get("email", "ditest10@tandatanganku.com")
+        email = kwargs.get("email", "ditest6@tandatanganku.com")
         test_obj = kwargs.get("obj", "email_taken")
         self.test_birth_place_validation(use=True)
         delay(2)

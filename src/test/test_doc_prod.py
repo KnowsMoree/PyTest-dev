@@ -6,7 +6,7 @@ import time
 
 class TestDocProd(TestSendDocument):
     def test_need_sign(self):
-        self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         self.password().send_keys("Coba1234" + self.keys.ENTER)
         delay(2)
         self.need_sign().click()
@@ -25,7 +25,7 @@ class TestDocProd(TestSendDocument):
         delay(5)
 
     def test_kotak_masuk(self):
-        self.username().send_keys("ditest10@tandatanganku.com" + self.keys.ENTER)
+        self.username().send_keys("ditest6@tandatanganku.com" + self.keys.ENTER)
         self.password().send_keys("Coba1234" + self.keys.ENTER)
         delay(2)
         self.nav_inbox().click()
