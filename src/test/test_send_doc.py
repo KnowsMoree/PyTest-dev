@@ -24,9 +24,9 @@ class TestSendDocument(FormObject, DocObject):
 
         delay(3)
         if is_pdf == "pdf":
-            self.doc_file().send_keys("D:\\repository\\try\\PyTest-dev\\src\\file\\report.pdf")
+            self.doc_file().send_keys("C:\\Users\\Aisy\\Sel\\PyTest-dev\\src\\file\\report.pdf")
         else:
-            self.doc_file().send_keys("D:\\repository\\try\\PyTest-dev\\src\\file\\image.jpeg")
+            self.doc_file().send_keys("C:\\Users\\Aisy\\Sel\\PyTest-dev\\src\\file\\image.jpeg")
         delay(4)
         self.doc_submit().click()
         delay(2)
@@ -216,7 +216,7 @@ class TestSendDocument(FormObject, DocObject):
         for i in range(iteration):
             if is_used is False:
                 delay(2)
-                self.doc_file().send_keys("D:\\repository\\try\\PyTest-dev\\src\\file\\report.pdf")
+                self.doc_file().send_keys("C:\\Users\\Aisy\\Sel\\PyTest-dev\\src\\file\\report.pdf")
                 delay(2)
                 self.doc_submit().click()
                 delay(2)

@@ -28,7 +28,8 @@ class TestWebsite:
     # url to test
     url = {
         "prod": "https://app.digisign.id",
-        "test": "https://app.tandatanganku.com"
+        "test": "https://app.tandatanganku.com",
+        "wnatest":"https://corp.tandatanganku.com/wna/registration.html"
     }
 
     # setup test
